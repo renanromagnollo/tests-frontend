@@ -30,4 +30,13 @@ describe('TaskForm', () => {
     // Verificar se o input foi limpo
     expect(input).toHaveValue('')
   })
+
+  it('desabilita o botão se o input estiver vazio', () => {
+    const onAddTaskMock = jest.fn()
+    render(<TaskForm onAddTask={onAddTaskMock} />)
+
+    const button = screen.getByRole('button', { name: /adicionar/i })
+
+    expect(button).toBeDisabled()
+  })
 })

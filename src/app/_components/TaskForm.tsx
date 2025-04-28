@@ -23,7 +23,7 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button type="submit">Adicionar</button>
+      <button type="submit" disabled={!title.trim()}>Adicionar</button>
     </form>
   )
 }
